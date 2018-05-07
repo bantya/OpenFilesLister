@@ -4,7 +4,7 @@ import os
 
 # created  18-04-2018
 class ListOpenFilesCommand(sublime_plugin.WindowCommand):
-    def run(self, forward=True):
+    def run(self):
         self.window = sublime.active_window()
 
         self.sheets = []
@@ -12,13 +12,9 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
         self.fileNames = []
         self.viewIds = []
 
-        self.untitled = self.get_settings().get("show_untitled_files")
+        self.untitled = self.get_setting("show_untitled_files")
 
         count = 0
-
-        if self.get_settings().get("classic_mode") == True:
-            self.get_direction(forward)
-            return
 
         for sheet in self.window.sheets():
             if sheet and sheet.view():
@@ -37,8 +33,6 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
                     self.filePaths.append("Untitled-{}{}".format(count, temp))
                     self.viewIds.append(sheet.view().id())
                     count = count + 1
-
-        self.get_direction(forward)
 
         self.current = self.viewIds.index(self.window.active_sheet().view().id())
         self.window.run_command("hide_overlay")
@@ -61,12 +55,6 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
 
     def on_highlighted(self, index):
         self.window.focus_view(self.sheets[index])
-
-    def get_direction(self, forward):
-        if forward == True:
-            self.window.run_command("next_view")
-        else:
-            self.window.run_command("prev_view")
 
     def get_settings(self):
         return sublime.load_settings('ListOpenFiles.sublime-settings')
