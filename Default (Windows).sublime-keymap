@@ -1,0 +1,12 @@
+[
+    {
+        "keys": ["ctrl+tab"],
+        "command": "list_open_files",
+        "args": {"forward": true},
+    },
+    {
+        "keys": ["ctrl+shift+tab"],
+        "command": "list_open_files",
+        "args": {"forward": false},
+    }
+]

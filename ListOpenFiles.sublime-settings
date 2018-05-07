@@ -1,0 +1,11 @@
+{
+    // This setting controlls the state of the open files list.
+    // True: Disable the files list mode and keep the classic mode.
+    // False: Enable the new files list mode.
+    "classic_mode": false,
+
+    // This setting helps in determining the inclusion of the untitled files in the list.
+    // True: Include the untitled files in the list.
+    // False: Exclude the untitled files in the list.
+	"show_untitled_files": false,
+}

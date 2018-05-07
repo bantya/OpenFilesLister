@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "List Open Files",
+        "command": "list_open_files",
+    },
+]
