@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 import os
 
-# created  18-04-2018
+# Created: 18-04-2018
 class ListOpenFilesCommand(sublime_plugin.WindowCommand):
     def run(self):
         self.window = sublime.active_window()
@@ -22,7 +22,6 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
                 if name != None:
                     self.sheets.append(sheet.view())
                     name = os.path.abspath(sheet.view().file_name())
-
                     self.fileNames.append(name.rsplit(os.sep, -1)[-1])
                     self.filePaths.append(name)
                     self.viewIds.append(sheet.view().id())
@@ -34,7 +33,14 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
                     self.viewIds.append(sheet.view().id())
                     count = count + 1
 
-        self.current = self.viewIds.index(self.window.active_sheet().view().id())
+        id = self.window.active_sheet().view().id()
+
+        if id not in self.viewIds:
+            self.window.run_command("next_view_in_stack")
+            id = self.window.active_sheet().view().id()
+
+        self.current = self.viewIds.index(id)
+        print (self.viewIds)
         self.window.run_command("hide_overlay")
 
         self.show_panel()

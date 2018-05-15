@@ -1,0 +1,6 @@
+[
+    {
+        "keys": ["option+p"],
+        "command": "list_open_files",
+    }
+]
