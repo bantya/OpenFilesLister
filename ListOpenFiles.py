@@ -40,7 +40,7 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
             id = self.window.active_sheet().view().id()
 
         self.current = self.viewIds.index(id)
-        print (self.viewIds)
+
         self.window.run_command("hide_overlay")
 
         self.show_panel()
