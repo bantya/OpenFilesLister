@@ -1,6 +1,6 @@
 [
     {
-        "caption": "List Open Files",
-        "command": "list_open_files",
+        "caption": "OpenFilesLister",
+        "command": "open_files_lister",
     },
 ]
