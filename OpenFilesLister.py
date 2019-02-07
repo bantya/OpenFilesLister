@@ -1,9 +1,9 @@
-import sublime
 import sublime_plugin
+import sublime
 import os
 
 # Created: 18-04-2018
-class ListOpenFilesCommand(sublime_plugin.WindowCommand):
+class OpenFilesListerCommand(sublime_plugin.WindowCommand):
     def run(self):
         self.window = sublime.active_window()
 
@@ -40,7 +40,7 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
             id = self.window.active_sheet().view().id()
 
         self.current = self.viewIds.index(id)
-
+        print (self.viewIds)
         self.window.run_command("hide_overlay")
 
         self.show_panel()
@@ -63,7 +63,7 @@ class ListOpenFilesCommand(sublime_plugin.WindowCommand):
         self.window.focus_view(self.sheets[index])
 
     def get_settings(self):
-        return sublime.load_settings('ListOpenFiles.sublime-settings')
+        return sublime.load_settings('OpenFilesLister.sublime-settings')
 
     def get_setting(self, setting):
         return self.get_settings().get(setting)

@@ -1,8 +1,10 @@
-# 📃 ListOpenFiles
+# 📃 OpenFilesLister
 
 ⚡ List open files in awesome Sublime Text
 
-😊 The super-handy shortcut <kbd>control+p</kbd> or <kbd>command+p</kbd> shows the list of all the visible files (if not in `file_exclude_patterns` in .sublime-project) to choose from and go to is used by almost all Sublime Text users.
+![Plugin usage](./img/usage.gif "Plugin usage")
+
+😊 The super-handy shortcut <kbd>alt+p</kbd> or <kbd>option+p</kbd> shows the list of all the visible files (if not in `file_exclude_patterns` in `.sublime-project`) to choose from and go to is used by almost all Sublime Text users.
 
 🙄 This handy shortcut is somewhat cumbersome in one case. Switching to an already editing file is somewhat overkill when using this command as it lists almost all the files in your project. This behavior annoys me and may certainly annoy you.
 
@@ -11,15 +13,15 @@
 ### ⚙ Setting:
 `"show_untitled_files"`:
 
-This setting will toggle the inclusion of untitled files in the open files list.
+This setting will toggle the inclusion of untitled (non-saved) files in the open files list.
 
-Default value: false
+Default value: **false**
 
 Possible values:
 
-- true: Include the untitled files.
-- false: Do not include the untitled files.
+- **true**: Include the untitled files.
+- **false**: Do not include the untitled files.
 
-### 🧠 Remember:
+### 🤔 Remember:
 
 When `show_untitled_files` is set to `false`, and you are invoking the command from an `untitled` file, the list will appear highlighting the next file in the stack.
