@@ -25,3 +25,9 @@ Possible values:
 ### 🤔 Remember:
 
 When `show_untitled_files` is set to `false`, and you are invoking the command from an `untitled` file, the list will appear highlighting the next file in the stack.
+
+### 🙌 Any Suggestions? Want to contribute?
+
+This project is **MIT license**d.
+
+If you have any suggestions regarding to the package or want to contribute then please feel free to do so.
