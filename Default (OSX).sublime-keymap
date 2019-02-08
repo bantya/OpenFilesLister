@@ -1,6 +1,6 @@
 [
     {
         "keys": ["option+p"],
-        "command": "list_open_files",
+        "command": "open_files_lister",
     }
 ]
